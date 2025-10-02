@@ -1,5 +1,5 @@
 [readme_backend.md](https://github.com/user-attachments/files/22628327/readme_backend.md)
-# Employee Data Management System
+# Employee Data Management System With Tests Report
 
 A full-stack CRUD (Create, Read, Update, Delete) application for managing employee records with a RESTful API backend and persistent data storage.
 
@@ -157,8 +157,6 @@ PASS  tests/employees.test.js
 
 Test Suites: 1 passed, 1 total
 Tests:       7 passed, 7 total
-Snapshots:   0 total
-Time:        2.5s
 ```
 
 ### Test Coverage
