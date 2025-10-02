@@ -4,6 +4,7 @@ const employeeAPI = {
     getAll: async () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
 
+        
         const response = await fetch(`${API_BASE_URL}`);
         if (!response.ok) throw new Error('Failed to fetch employees');
         return response.json();
