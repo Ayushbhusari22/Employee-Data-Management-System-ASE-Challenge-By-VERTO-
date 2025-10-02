@@ -2,6 +2,15 @@
 
 A full-stack web application for managing employee data with a modern, responsive interface and RESTful API backend.
 
+---
+
+## 🌐 Live Demo
+
+- **Backend API:** [https://teamdesk.onrender.com/](https://teamdesk.onrender.com/)
+- **Frontend App:** [https://teamdesk.vercel.app/](https://teamdesk.vercel.app/)
+
+---
+
 ## 🎯 Project Overview
 
 This Employee Management System allows users to perform complete CRUD (Create, Read, Update, Delete) operations on employee records. Built with a clean separation between frontend and backend, it features a beautiful, mobile-responsive UI with dark mode support.
