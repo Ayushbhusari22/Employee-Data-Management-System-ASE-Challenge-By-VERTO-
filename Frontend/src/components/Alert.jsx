@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Check, AlertCircle } from "lucide-react";
+import { Check, AlertCircle, X } from "lucide-react";
 
 function Alert ({ type, message, onClose }) {
     useEffect(() => {
@@ -18,9 +18,12 @@ function Alert ({ type, message, onClose }) {
     const Icon = type === "success" ? Check: AlertCircle;
 
     return (
-        <div className={`mb-4 p-3 border rounded flex items-center gap-2 ${styles}`}>
+        <div className={`mb-4 px-4 py-3 border rounded-lg flex justify-between items-center gap-2 ${styles}`}>
             <Icon className="w-5 h-5" />
             {message}
+            <button onClick={onClose} className="ml-4">
+                <X size={18} />
+            </button>
         </div>
     );
 

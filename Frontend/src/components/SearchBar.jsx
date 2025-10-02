@@ -1,31 +1,28 @@
 import React, { useContext } from "react";
-import { EmployeeContext } from "../App";
+import { EmployeeContext } from "./EmployeeManagement";
 import { Search, Plus } from "lucide-react";
 
 function SearchBar () {
-    const { searchName, setSearchName, setIsFormOpen } = useContext(EmployeeContext);
+    const { searchName, setSearchName, theme } = useContext(EmployeeContext);
+    const isDark = theme === 'dark';
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6 flex justify-between items-center">
-            <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <div className="mb-6">
+            <div className="relative">
+                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${isDark ? 'text-gray-500' : 'text-gray-400'
+                    }`} size={20} />
                 <input
                     type="text"
-                    placeholder="Search by name..."
+                    placeholder="Search by name, email, or position..."
                     value={searchName}
                     onChange={(e) => setSearchName(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg"
+                    className={`w-full pl-12 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${isDark
+                        ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-500 focus:border-indigo-500'
+                        : 'bg-white border-gray-200 text-gray-800 placeholder-gray-400 focus:border-indigo-500 shadow-sm'
+                        } outline-none`}
                 />
             </div>
-            <button
-                onClick={() => setIsFormOpen(true)}
-                className="ml-4 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700"
-            >
-                <Plus className="inline w-5 h-5 mr-2" />
-                Add Employee
-            </button>
         </div>
     );
 }
-
 export default SearchBar;

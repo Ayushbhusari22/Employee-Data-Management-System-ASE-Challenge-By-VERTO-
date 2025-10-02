@@ -1,12 +1,21 @@
 import React, { useContext } from "react";
-import { EmployeeContext } from "../App";
+import { EmployeeContext } from "./EmployeeManagement";
 
 function StatsFooter () {
-    const { employees } = useContext(EmployeeContext);
+    const { employees, filteredEmployees, theme } = useContext(EmployeeContext);
+    const isDark = theme === 'dark';
+
     return (
-        <p className="mt-4 text-center text-gray-500">
-            Total Employees : {employees.length}
-        </p>
+        <div className={`mt-6 p-4 rounded-xl ${isDark ? 'bg-gray-800 text-gray-300' : 'bg-white text-gray-600 shadow-md'
+            }`}>
+            <div className="flex justify-between items-center">
+                <span className="text-sm">
+                    Showing <span className="font-semibold">{filteredEmployees.length}</span> of{' '}
+                    <span className="font-semibold">{employees.length}</span> employees
+                </span>
+                <span className="text-sm">Last updated: {new Date().toLocaleDateString()}</span>
+            </div>
+        </div>
     );
 }
 

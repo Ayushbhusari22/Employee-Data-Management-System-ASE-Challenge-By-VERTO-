@@ -1,25 +1,48 @@
-import axios from "axios";
+// EmployeeService.js
+const API_BASE_URL = "http://localhost:5000/api/employees";
 
-const API_URL = "http://localhost:5000/api/employees";
+const employeeAPI = {
+    getAll: async () => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-export const getEmployees = async () => {
-    const res = await axios.get(API_URL);
-    return res.data;
+        const response = await fetch(`${API_BASE_URL}`);
+        if (!response.ok) throw new Error('Failed to fetch employees');
+        return response.json();
+    },
+
+    create: async (employeeData) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        const response = await fetch(`${API_BASE_URL}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(employeeData)
+        });
+        if (!response.ok) throw new Error('Failed to create employee');
+        return response.json();
+    },
+
+    update: async (id, employeeData) => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const response = await fetch(`${API_BASE_URL}/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(employeeData)
+        });
+        if (!response.ok) throw new Error('Failed to update employee');
+        return response.json();
+    },
+
+    delete: async (id) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        const response = await fetch(`${API_BASE_URL}/${id}`, {
+            method: 'DELETE'
+        });
+        if (!response.ok) throw new Error('Failed to delete employee');
+        return response.json();
+    }
 };
 
-export const addEmployee = async (employee) => {
-    const res = await axios.post(API_URL, employee);
-    console.log(res.data);
-    return res.data;
-};
-
-export const updateEmployee = async (id, employee) => {
-    const res = await axios.put(`${API_URL}/${id}`, employee);
-    console.log(res.data);
-    return res.data;
-};
-
-export const deleteEmployee = async (id) => {
-    const res = await axios.delete(`${API_URL}/${id}`);
-    return res.data;
-};
+export default employeeAPI;
