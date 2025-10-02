@@ -1,10 +1,9 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api/employees";
-
+const API_BASE_URL = (process.env.REACT_APP_API_URL || "http://localhost:5000") + "/api/employees";
 const employeeAPI = {
     getAll: async () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        
+
         const response = await fetch(`${API_BASE_URL}`);
         if (!response.ok) throw new Error('Failed to fetch employees');
         return response.json();
