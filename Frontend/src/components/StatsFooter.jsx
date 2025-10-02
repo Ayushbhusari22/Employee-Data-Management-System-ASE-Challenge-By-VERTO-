@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { EmployeeContext } from "./EmployeeManagement";
 
 function StatsFooter () {
@@ -11,7 +11,7 @@ function StatsFooter () {
             <div className="flex justify-between items-center">
                 <span className="text-sm">
                     Showing <span className="font-semibold">{filteredEmployees.length}</span> of{' '}
-                    <span className="font-semibold">{employees.length}</span> employees
+                    <span className="font-semibold">{employees.length}</span>
                 </span>
                 <span className="text-sm">Last updated: {new Date().toLocaleDateString()}</span>
             </div>

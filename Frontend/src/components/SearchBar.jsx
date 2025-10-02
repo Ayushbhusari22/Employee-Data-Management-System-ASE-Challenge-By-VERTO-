@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { EmployeeContext } from "./EmployeeManagement";
-import { Search, Plus } from "lucide-react";
+import { Search } from "lucide-react";
 
 function SearchBar () {
     const { searchName, setSearchName, theme } = useContext(EmployeeContext);

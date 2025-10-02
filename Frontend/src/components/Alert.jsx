@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Check, AlertCircle, X } from "lucide-react";
 
 function Alert ({ type, message, onClose }) {

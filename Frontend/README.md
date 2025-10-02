@@ -1,16 +1,112 @@
-# React + Vite
+# Employee Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A modern React-based employee management system with features like dark/light theme, search functionality, and CRUD operations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌓 Dark/Light theme switching
+- 🔍 Real-time search filtering
+- ➕ Add new employees
+- ✏️ Edit existing employees
+- ❌ Delete employees
+- 📊 Employee data management
+- 📱 Responsive design
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Tailwind CSS
+- Lucide Icons
+- Context API
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 16.0 or later
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to frontend directory
+cd Frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Alert.jsx
+│   ├── EmployeeForm.jsx
+│   ├── EmployeeManagement.jsx
+│   ├── EmployeeRow.jsx
+│   ├── EmployeeTable.jsx
+│   ├── SearchBar.jsx
+│   └── StatsFooter.jsx
+├── services/
+│   └── EmployeeService.js
+├── App.jsx
+└── main.jsx
+```
+
+## Component Architecture
+
+### EmployeeManagement (Parent Component)
+- Manages global state using Context API
+- Handles theme switching
+- Controls form visibility
+- Manages API operations
+
+### EmployeeTable
+- Displays employee data in tabular format
+- Supports sorting and filtering
+- Handles row-level operations
+
+### EmployeeForm
+- Handles employee creation and updates
+- Form validation
+- API integration for CRUD operations
+
+### SearchBar
+- Real-time search functionality
+- Filters by name, email, and position
+
+## State Management
+Using React Context API for global state management:
+
+- Employee data
+- Theme preferences
+- Search filters
+- Loading states
+- Error/Success messages
+
+## Styling
+- Tailwind CSS for utility-first styling
+- Custom animations for smooth transitions
+- Responsive design for mobile devices
+- Dark/Light theme support
+
+## API Integration
+API endpoints are managed through `EmployeeService.js`:
+
+- GET /employees
+- POST /employees
+- PUT /employees/:id
+- DELETE /employees/:id
+
+## Error Handling
+- Graceful error handling with user feedback
+- Fallback to demo data if API fails
+- Loading states for async operations

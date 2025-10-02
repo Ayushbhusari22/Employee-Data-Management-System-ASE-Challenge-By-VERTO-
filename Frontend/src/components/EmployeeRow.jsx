@@ -7,6 +7,7 @@ function EmployeeRow ({ emp, index }) {
     const {
         employees,
         setEmployees,
+        deleting, setDeleting,
         setEditingEmployee,
         setIsFormOpen,
         setSuccess,
@@ -15,7 +16,6 @@ function EmployeeRow ({ emp, index }) {
     } = useContext(EmployeeContext);
 
     const isDark = theme === 'dark';
-    const [deleting, setDeleting] = useState(false);
 
     const handleEdit = () => {
         setEditingEmployee(emp);

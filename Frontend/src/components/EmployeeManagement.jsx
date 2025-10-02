@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import SearchBar from "./SearchBar";
 import EmployeeForm from "./EmployeeForm";
 import EmployeeTable from "./EmployeeTable";
@@ -17,7 +17,8 @@ function EmployeeManagement () {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [theme, setTheme] = useState('dark');
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const [deleting, setDeleting] = useState(false);
 
     const isDark = theme === 'dark';
 
@@ -63,8 +64,11 @@ function EmployeeManagement () {
         setSearchName,
         isFormOpen,
         setIsFormOpen,
+
+        loading, setLoading,
         editingEmployee,
         setEditingEmployee,
+        deleting, setDeleting,
         error,
         setError,
         success,
@@ -91,15 +95,24 @@ function EmployeeManagement () {
                             </p>
                         </div>
 
-                        <div className="flex gap-3">
+                        <div className="flex gap-3 res-buttons">
                             <button
                                 onClick={toggleTheme}
-                                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${isDark
+                                className={`button px-4 py-2 rounded-lg font-medium transition-all duration-200 ${isDark
                                     ? 'bg-gray-800 text-white hover:bg-gray-700'
                                     : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
                                     }`}
                             >
-                                {isDark ? '☀️ Light' : '🌙 Dark'}
+
+                                {/* For Mobile */}
+                                <span className="block sm:hidden">
+                                    {isDark ? '☀️' : '🌙'}
+                                </span>
+
+                                {/* For desktop */}
+                                <span className="hidden sm:block">
+                                    {isDark ? '☀️ Light' : '🌙 Dark'}
+                                </span>
                             </button>
 
                             <button
@@ -107,13 +120,17 @@ function EmployeeManagement () {
                                     setEditingEmployee(null);
                                     setIsFormOpen(!isFormOpen);
                                 }}
-                                className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${isDark
+                                className={`button px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${isDark
                                     ? 'bg-indigo-600 hover:bg-indigo-700 text-white'
                                     : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl'
                                     }`}
                             >
                                 <Plus size={20} />
-                                Add Employee
+
+                                {/* For desktop */}
+                                <span className="hidden sm:inline">
+                                    Add Employee
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -148,6 +165,13 @@ function EmployeeManagement () {
             to {
               transform: rotate(360deg);
             }
+          }
+
+          @media (max-width: 620px) {
+          .res-buttons {
+            width: 20%;
+            flex-direction: column;
+          }
           }
         `}</style>
             </div>

@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { EmployeeContext } from "./EmployeeManagement";
 import EmployeeRow from "./EmployeeRow";
-import { v1 as uuidv1 } from 'uuid';
 import { User, Mail, Briefcase, Loader } from "lucide-react";
 
 function EmployeeTable () {

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { EmployeeContext } from "./EmployeeManagement";
 import employeeAPI from "../EmployeeService";
 import { Loader } from "lucide-react";
@@ -10,6 +10,8 @@ function EmployeeForm () {
         setEmployees,
         editingEmployee,
         setEditingEmployee,
+        loading, 
+        setLoading,
         setIsFormOpen,
         setSuccess,
         setError,
@@ -17,7 +19,6 @@ function EmployeeForm () {
     } = useContext(EmployeeContext);
 
     const isDark = theme === 'dark';
-    const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         name: editingEmployee?.name || '',
