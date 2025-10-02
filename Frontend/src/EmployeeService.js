@@ -1,4 +1,6 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api/employees";
+const API_BASE_URL = process.env.REACT_APP_API_URL ;
+// const API_BASE_URL = "http://localhost:5000/api/employees" ;
+
 const employeeAPI = {
     getAll: async () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
