@@ -187,18 +187,6 @@ Toggle between light and dark modes:
 - SQL injection prevention
 - Proper error responses
 
-## 🚀 Future Enhancements
-
-- [ ] Pagination for large datasets
-- [ ] Export to CSV/Excel
-- [ ] Advanced filtering (by position, date)
-- [ ] Sorting columns
-- [ ] Bulk operations
-- [ ] Employee profile pictures
-- [ ] Role-based authentication
-- [ ] Audit logs
-- [ ] Email notifications
-
 ## 📝 Development Workflow
 
 1. Create feature branch
