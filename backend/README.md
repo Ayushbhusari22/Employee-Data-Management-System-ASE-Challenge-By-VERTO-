@@ -1,5 +1,5 @@
 [readme_backend.md](https://github.com/user-attachments/files/22628327/readme_backend.md)
-# Employee Data Management System With Tests Report
+# Employee Data Management System
 
 A full-stack CRUD (Create, Read, Update, Delete) application for managing employee records with a RESTful API backend and persistent data storage.
 
@@ -128,21 +128,6 @@ Expected response:
 npm test
 ```
 
-### Run Tests with Coverage Report
-```bash
-npm test -- --coverage
-```
-
-### Run Tests in Watch Mode
-```bash
-npm test -- --watch
-```
-
-### Run Tests with Verbose Output
-```bash
-npm test -- --verbose
-```
-
 ### Expected Test Results
 ```
 PASS  tests/employees.test.js
@@ -157,6 +142,8 @@ PASS  tests/employees.test.js
 
 Test Suites: 1 passed, 1 total
 Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        2.5s
 ```
 
 ### Test Coverage
@@ -374,7 +361,7 @@ curl -X DELETE http://localhost:5000/api/employees/1
 - **Duplicate detection**: Specific error for email uniqueness violation
 
 ### Testing Strategy
-**Coverage**: 24 comprehensive tests
+**Coverage**: 7 comprehensive tests
 - **Unit tests**: Each CRUD operation tested individually
 - **Integration tests**: Full API endpoint testing with database
 - **Edge cases**: Empty strings, long inputs, complex emails, invalid formats
