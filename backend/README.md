@@ -128,21 +128,6 @@ Expected response:
 npm test
 ```
 
-### Run Tests with Coverage Report
-```bash
-npm test -- --coverage
-```
-
-### Run Tests in Watch Mode
-```bash
-npm test -- --watch
-```
-
-### Run Tests with Verbose Output
-```bash
-npm test -- --verbose
-```
-
 ### Expected Test Results
 ```
 PASS  tests/employees.test.js
