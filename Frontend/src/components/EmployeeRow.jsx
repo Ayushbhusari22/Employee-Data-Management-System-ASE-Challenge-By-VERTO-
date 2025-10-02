@@ -47,10 +47,16 @@ function EmployeeRow ({ emp, index }) {
             style={{ animation: `fadeIn 0.3s ease-in-out ${index * 0.05}s both` }}
         >
             <td className={`px-6 py-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    <span className="font-medium">{emp.name}</span>
+                <span className="font-medium">{emp.name}</span>
             </td>
             <td className={`px-6 py-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                {emp.email}
+                <a
+                    href={`mailto:${emp.email}`}
+                    className={isDark ? "underline text-blue-300 hover:text-blue-200" : "underline text-blue-700 hover:text-blue-900"}
+                    title={`Send email to ${emp.email}`}
+                >
+                    {emp.email}
+                </a>
             </td>
             <td className="px-6 py-4">
                 <span className={`inline-flex px-3 py-1 rounded-full text-sm font-medium ${isDark ? 'bg-blue-900/50 text-blue-300' : 'bg-blue-100 text-blue-800'
