@@ -5,11 +5,11 @@ const API_BASE_URL = "https://teamdesk.onrender.com";
 const employeeAPI = {
     getAll: async () => {
         await new Promise(resolve => setTimeout(resolve, 2000));
-
-
         const response = await fetch(`${API_BASE_URL}`);
         if (!response.ok) throw new Error('Failed to fetch employees');
-        return response.json();
+        const data = await response.json();
+        // Support both array and object with employees property
+        return Array.isArray(data) ? data : data.employees;
     },
 
     create: async (employeeData) => {
