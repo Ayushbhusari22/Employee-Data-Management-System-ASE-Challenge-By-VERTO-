@@ -376,7 +376,7 @@ curl -X DELETE http://localhost:5000/api/employees/1
 - **Duplicate detection**: Specific error for email uniqueness violation
 
 ### Testing Strategy
-**Coverage**: 24 comprehensive tests
+**Coverage**: 7 comprehensive tests
 - **Unit tests**: Each CRUD operation tested individually
 - **Integration tests**: Full API endpoint testing with database
 - **Edge cases**: Empty strings, long inputs, complex emails, invalid formats
