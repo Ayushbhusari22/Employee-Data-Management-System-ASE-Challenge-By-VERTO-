@@ -132,7 +132,7 @@ cd employee-data-mgmt
 ```bash
 cd backend
 npm install
-npm run dev
+npm start
 ```
 Server runs on: `http://localhost:5000`
 
@@ -140,9 +140,9 @@ Server runs on: `http://localhost:5000`
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
-App runs on: `http://localhost:3000`
+App runs on: `http://localhost:5173`
 
 ## 📡 API Endpoints
 
