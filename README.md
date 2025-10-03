@@ -144,6 +144,41 @@ npm run dev
 ```
 App runs on: `http://localhost:5173`
 
+## 🧪 Running Tests
+
+### Run All Tests
+```bash
+npm test
+```
+
+### Expected Test Results
+```
+PASS  tests/employees.test.js
+  Employee API Tests
+    ✓ should create a new employee
+    ✓ should get all employees
+    ✓ should get employee by ID
+    ✓ should update an employee
+    ✓ should delete an employee
+    ✓ should fail to create employee with missing fields
+    ✓ should fail to create employee with invalid email
+
+Test Suites: 1 passed, 1 total
+Tests:       7 passed, 7 total
+Time:        2.5s
+```
+
+### Test Coverage
+The test suite includes **7 comprehensive tests** covering:
+- ✅ All CRUD operations (Create, Read, Update, Delete)
+- ✅ Input validation (required fields, email format)
+- ✅ Error handling (400 validation errors)
+- ✅ Edge cases (empty fields, invalid email)
+- ✅ HTTP status codes verification
+- ✅ Database integrity
+
+---
+
 ## 📡 API Endpoints
 
 | Method | Endpoint | Description |
