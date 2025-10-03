@@ -1,6 +1,4 @@
-const API_BASE_URL = "https://teamdesk.onrender.com/api/employees";
-
-// const API_BASE_URL = "http://localhost:5000/api/employees" ;
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const employeeAPI = {
     getAll: async () => {
