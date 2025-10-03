@@ -70,7 +70,7 @@ function EmployeeForm () {
                     ...newEmployee
                 };
 
-                setEmployees(prevEmployees => [completeNewEmployee, ...prevEmployees]);
+                setEmployees(prevEmployees => [...prevEmployees, completeNewEmployee]);
                 setSuccess("Employee added successfully!");
             }
 
