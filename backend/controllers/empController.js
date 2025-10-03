@@ -22,7 +22,7 @@ const validateEmployee = (name, email, position) => {
 
 // GET all employees
 exports.getAllEmployees = (req, res) => {
-    const query = 'SELECT * FROM employees ORDER BY created_at DESC';
+    const query = 'SELECT * FROM employees';
     db.all(query, [], (err, rows) => {
         if (err) return res.status(500).json({ error: err.message });
         res.status(200).json(rows);
