@@ -78,7 +78,6 @@ function EmployeeForm () {
             setEditingEmployee(null);
             setFormData({ name: '', email: '', position: '' });
             setTimeout(() => setSuccess(''), 3000);
-
         } catch (error) {
             console.error("Error saving employee:", error);
             setError("Failed to save employee. Please try again.");
