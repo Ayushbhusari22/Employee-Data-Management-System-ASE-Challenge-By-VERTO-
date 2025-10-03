@@ -8,6 +8,7 @@ A full-stack web application for managing employee data with a modern, responsiv
 
 - **Backend API:** [https://teamdesk.onrender.com/](https://teamdesk.onrender.com/)
 - **Frontend App:** [https://teamdesk.vercel.app/](https://teamdesk.vercel.app/)
+- - **Demo Video:** <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/2ebee74a24b1428a8554331ad1a1b019?sid=f93905e9-b40a-45f4-8bc9-b3e05161ed63" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ---
 
