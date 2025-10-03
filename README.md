@@ -1,4 +1,4 @@
-# Employee Management System 👥
+# Employee Data Management System 👥
 
 A full-stack web application for managing employee data with a modern, responsive interface and RESTful API backend.
 
