@@ -1,4 +1,4 @@
-# Employee Data Management System (ASE Challenge By Verto)👥
+# Employee Data Management System (ASE Challenge By VERTO)👥
 
 A full-stack web application for managing employee data with a modern, responsive interface and RESTful API backend.
 
