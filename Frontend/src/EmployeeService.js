@@ -9,7 +9,7 @@ const employeeAPI = {
         if (!response.ok) throw new Error('Failed to fetch employees');
         const data = await response.json();
         // Support both array and object with employees property
-        return Array.isArray(data) ? data : data.employees;
+        return Array.isArray(data) ? data : [];
     },
 
     create: async (employeeData) => {
@@ -25,7 +25,7 @@ const employeeAPI = {
     },
 
     update: async (id, employeeData) => {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
         const response = await fetch(`${API_BASE_URL}/${id}`, {
             method: 'PUT',
