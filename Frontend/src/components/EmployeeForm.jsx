@@ -10,7 +10,7 @@ function EmployeeForm () {
         setEmployees,
         editingEmployee,
         setEditingEmployee,
-        loading, 
+        loading,
         setLoading,
         setIsFormOpen,
         setSuccess,
@@ -25,6 +25,13 @@ function EmployeeForm () {
         email: editingEmployee?.email || '',
         position: editingEmployee?.position || ''
     });
+
+    const fetchEmployees = async () => {
+        setLoading(true);
+        const data = await employeeAPI.getAll();
+        setEmployees(data);
+        setLoading(false);
+    };
 
     useEffect(() => {
         if (editingEmployee) {
@@ -71,6 +78,7 @@ function EmployeeForm () {
                 };
 
                 setEmployees(prevEmployees => [completeNewEmployee, ...prevEmployees]);
+                fetchEmployees();
                 setSuccess("Employee added successfully!");
             }
 
@@ -106,8 +114,8 @@ function EmployeeForm () {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={`px-4 py-2 rounded-lg border-2 ${isDark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
-                            : 'bg-white border-gray-300 text-gray-800'
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
+                        : 'bg-white border-gray-300 text-gray-800'
                         } outline-none focus:border-indigo-500`}
                     required
                     disabled={loading}
@@ -118,8 +126,8 @@ function EmployeeForm () {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={`px-4 py-2 rounded-lg border-2 ${isDark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
-                            : 'bg-white border-gray-300 text-gray-800'
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
+                        : 'bg-white border-gray-300 text-gray-800'
                         } outline-none focus:border-indigo-500`}
                     required
                     disabled={loading}
@@ -130,8 +138,8 @@ function EmployeeForm () {
                     value={formData.position}
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                     className={`px-4 py-2 rounded-lg border-2 ${isDark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
-                            : 'bg-white border-gray-300 text-gray-800'
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400'
+                        : 'bg-white border-gray-300 text-gray-800'
                         } outline-none focus:border-indigo-500`}
                     required
                     disabled={loading}
@@ -150,8 +158,8 @@ function EmployeeForm () {
                     onClick={handleCancel}
                     disabled={loading}
                     className={`px-6 py-2 rounded-lg font-medium transition-all disabled:opacity-50 ${isDark
-                            ? 'bg-gray-700 hover:bg-gray-600 text-white'
-                            : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
+                        ? 'bg-gray-700 hover:bg-gray-600 text-white'
+                        : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                         }`}
                 >
                     Cancel

@@ -8,7 +8,6 @@ A full-stack web application for managing employee data with a modern, responsiv
 
 - **Backend API:** [https://teamdesk.onrender.com/](https://teamdesk.onrender.com/)
 - **Frontend App:** [https://teamdesk.vercel.app/](https://teamdesk.vercel.app/)
-
 ---
 
 ## 🎯 Project Overview
